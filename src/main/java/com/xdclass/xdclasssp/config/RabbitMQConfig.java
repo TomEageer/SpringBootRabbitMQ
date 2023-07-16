@@ -8,37 +8,40 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String EXCHANGE_NAME = "order_exchange";
-
-    public static final String QUEUE = "order_queue";
-
-    /**
-     * topic交换机
-     * @return
-     */
-    @Bean
-    public Exchange orderExchange(){
-        return ExchangeBuilder.topicExchange(EXCHANGE_NAME).durable(true).build();
-    }
-
-    /**
-     * 队列
-     * @return
-     */
-    @Bean
-    public Queue orderQueue(){
-        return QueueBuilder.durable(QUEUE).build();
-    }
-
-    /**
-     * 交换机和队列绑定关系
-     * @param queue
-     * @param exchange
-     * @return
-     */
-    @Bean
-    public Binding orderBinding(Queue queue, Exchange exchange){
-        return BindingBuilder.bind(queue).to(exchange).with("order.#").noargs();
-    }
+//    public static final String EXCHANGE_NAME = "order_exchange";
+//
+//    public static final String QUEUE = "order_queue";
+//
+//    /**
+//     * topic交换机
+//     * @return
+//     */
+//    @Bean
+//    public Exchange orderExchange(){
+//        System.out.println("\norderExchange\n");
+//        return ExchangeBuilder.topicExchange(EXCHANGE_NAME).durable(true).build();
+//    }
+//
+//    /**
+//     * 队列
+//     * @return
+//     */
+//    @Bean
+//    public Queue orderQueue(){
+//        System.out.println("\norderQueue\n");
+//        return QueueBuilder.durable(QUEUE).build();
+//    }
+//
+//    /**
+//     * 交换机和队列绑定关系
+//     * @param queue
+//     * @param exchange
+//     * @return
+//     */
+//    @Bean
+//    public Binding orderBinding(Queue queue, Exchange exchange){
+//        System.out.println("\norderBinding\n");
+//        return BindingBuilder.bind(queue).to(exchange).with("order.#").noargs();
+//    }
 
 }
