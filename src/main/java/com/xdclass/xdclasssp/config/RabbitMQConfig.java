@@ -100,9 +100,9 @@ public class RabbitMQConfig {
         //消息过期后，进入到死信交换机
         args.put("x-dead-letter-exchange", LOCK_MERCHANT_DEAD_EXCHANGE);
         //消息过期后，进入到死信交换机的路由key
-        args.put("x-dead-letter-routing-key", LOCK_MERCHANT_DEAD_EXCHANGE);
+        args.put("x-dead-letter-routing-key", LOCK_MERCHANT_ROUTING_KEY);
         //过期时间，单位毫秒
-        args.put("x-messgae-ttl",10000);
+        args.put("x-message-ttl",10000);
 
 
 
